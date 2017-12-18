@@ -63,5 +63,12 @@ namespace UnitTestTuiGroupReadinFiles
             var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Anonymous);
             Assert.IsTrue(read == string.Empty);
         }
+
+        [TestMethod]
+        public void readJSONFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readTextFile(@"c:\filesTUI\javi.json");
+            Assert.IsTrue(read != string.Empty);
+        }
     }
 }

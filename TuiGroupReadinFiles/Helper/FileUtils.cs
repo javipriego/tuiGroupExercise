@@ -74,6 +74,30 @@ namespace TuiGroupReadinFiles.Helper
                 return string.Empty;
             }
         }
+
+        /// <summary>
+        /// Read a JSON file
+        /// </summary>
+        /// <param name="path">path of the filename</param>
+        /// <returns></returns>
+        public static string readJSONFile(string path)
+        {
+            var text = string.Empty;
+            try
+            {
+                var readText = File.ReadAllText(path);
+                dynamic deserializeJson = Newtonsoft.Json.JsonConvert.DeserializeObject(readText);
+                text = deserializeJson[0].hws[2];
+                return text;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+                return string.Empty;
+            }
+        }
+
         /// <summary>
         /// A tiny way to encrypt or decrypt is to do a reverse
         /// </summary>
