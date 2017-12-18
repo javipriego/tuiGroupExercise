@@ -80,17 +80,26 @@ namespace TuiGroupReadinFiles.Helper
         /// </summary>
         /// <param name="path">path of the filename</param>
         /// <returns></returns>
-        public static string readJSONFile(string path, bool encrypted = false)
+        public static string readJSONFile(string path, bool encrypted = false, RoleType role = RoleType.Anonymous)
         {
             var text = string.Empty;
             try
-            {
-                var readText = File.ReadAllText(path);
-                dynamic deserializeJson = Newtonsoft.Json.JsonConvert.DeserializeObject(readText);
-                text = deserializeJson[0].hws[2];
-                if (encrypted)
+            {                
+                FileInfo fileInfo = new FileInfo(path);
+                //If the file has more than 10 minutes created need to be Admin to access
+                if (fileInfo.CreationTime.AddMinutes(10) > DateTime.Now || RoleType.Admin.Equals(role))
                 {
-                    readText = decryptFile(readText);
+                    var readText = File.ReadAllText(path);
+                    dynamic deserializeJson = Newtonsoft.Json.JsonConvert.DeserializeObject(readText);
+                    text = deserializeJson[0].hws[2];
+                    if (encrypted)
+                    {
+                        readText = decryptFile(readText);
+                    }
+                }
+                else
+                {
+                    throw new Exception("The user has no grant to access this file");
                 }
                 return text;
             }

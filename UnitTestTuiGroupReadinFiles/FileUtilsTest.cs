@@ -77,5 +77,19 @@ namespace UnitTestTuiGroupReadinFiles
             var read = FileUtils.readTextFile(@"c:\filesTUI\javiEncrypted.json", true);
             Assert.IsTrue(read != string.Empty);
         }
+
+        [TestMethod]
+        public void readAdminJSONFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readJSONFile(@"c:\filesTUI\javiAdmin.json", false,  RoleType.Admin);
+            Assert.IsTrue(read != string.Empty);
+        }
+
+        [TestMethod]
+        public void readAnonymousJSONFile_WhenPruebaText_ReadFileIsNotCorrect()
+        {
+            var read = FileUtils.readJSONFile(@"c:\filesTUI\javiAdmin.json", false, RoleType.Anonymous);
+            Assert.IsTrue(read == string.Empty);
+        }
     }
 }
