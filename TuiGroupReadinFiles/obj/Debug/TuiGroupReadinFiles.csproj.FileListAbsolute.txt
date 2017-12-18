@@ -2,3 +2,4 @@ c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\TuiGr
 c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\TuiGroupReadinFiles\bin\Debug\TuiGroupReadinFiles.pdb
 c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\TuiGroupReadinFiles\obj\Debug\TuiGroupReadinFiles.dll
 c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\TuiGroupReadinFiles\obj\Debug\TuiGroupReadinFiles.pdb
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\TuiGroupReadinFiles\obj\Debug\TuiGroupReadinFiles.csprojResolveAssemblyReference.cache

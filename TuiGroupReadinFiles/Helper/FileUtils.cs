@@ -13,7 +13,7 @@ namespace TuiGroupReadinFiles.Helper
         /// </summary>
         /// <param name="path">path of the filename</param>
         /// <returns></returns>
-        public static string readTextFile(string path)
+        public static string readTextFile(string path, bool encrypted = false)
         {
             var readText = string.Empty;
             try
@@ -23,6 +23,12 @@ namespace TuiGroupReadinFiles.Helper
                 {
                     // Open the file to read from.
                     readText = File.ReadAllText(path);
+
+                    // decrypt the file
+                    if (encrypted)
+                    {
+                       readText = decryptFile(readText);
+                    }
                 }
                 return readText;
             }
@@ -60,5 +66,16 @@ namespace TuiGroupReadinFiles.Helper
             }
         }
 
+        /// <summary>
+        /// A tiny way to encrypt or decrypt is to do a reverse
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string decryptFile(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
     }
 }

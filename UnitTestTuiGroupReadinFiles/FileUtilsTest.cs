@@ -20,5 +20,12 @@ namespace UnitTestTuiGroupReadinFiles
             var read = FileUtils.readXMLFile(@"c:\filesTUI\javi.xml");
             Assert.IsTrue(read != string.Empty);
         }
+
+        [TestMethod]
+        public void readEncryptedTextFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readTextFile(@"c:\filesTUI\javiEncrypted.txt",true);
+            Assert.IsTrue(read != string.Empty);
+        }
     }
 }
