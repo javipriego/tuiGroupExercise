@@ -32,22 +32,36 @@ namespace UnitTestTuiGroupReadinFiles
         [TestMethod]
         public void readAdminXMLFile_WhenPruebaText_ReadFileIsCorrect()
         {
-            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Admin);
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.xml", RoleType.Admin);
             Assert.IsTrue(read != string.Empty);
         }
         
         [TestMethod]
         public void readAnonymousXMLFile_WhenPruebaText_ReadFileIsNotCorrect()
         {
-            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Anonymous);
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.xml", RoleType.Anonymous);
             Assert.IsTrue(read == string.Empty);
         }
 
         [TestMethod]
         public void readAdminDEcryptedXMLFile_WhenPruebaText_ReadFileIsCorrect()
         {
-            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiDecryptedAdmin.txt", RoleType.Admin);
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiDecryptedAdmin.xml", RoleType.Admin);
             Assert.IsTrue(read != string.Empty);
+        }
+
+        [TestMethod]
+        public void readAdminTXTFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Admin);
+            Assert.IsTrue(read != string.Empty);
+        }
+
+        [TestMethod]
+        public void readAnonymousTXTFile_WhenPruebaText_ReadFileIsNotCorrect()
+        {
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Anonymous);
+            Assert.IsTrue(read == string.Empty);
         }
     }
 }

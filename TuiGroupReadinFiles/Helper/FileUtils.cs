@@ -13,40 +13,32 @@ namespace TuiGroupReadinFiles.Helper
         /// Read a text file
         /// </summary>
         /// <param name="path">path of the filename</param>
+        /// <remarks>Is obsolete use readFile</remarks>
         /// <returns></returns>
-        public static string readTextFile(string path, bool encrypted = false)
+        public static string readTextFile(string path, bool encrypted = false, RoleType role = RoleType.Anonymous)
         {
-            var readText = string.Empty;
-            try
-            {                
-                // This text is added only once to the file.
-                if (File.Exists(path))
-                {
-                    // Open the file to read from.
-                    readText = File.ReadAllText(path);
-
-                    // decrypt the file
-                    if (encrypted)
-                    {
-                       readText = decryptFile(readText);
-                    }
-                }
-                return readText;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-                return string.Empty;
-            }
+            return readFile(path, role, encrypted);
         }
 
         /// <summary>
         /// Read a XML file
         /// </summary>
         /// <param name="path">path of the filename</param>
+        /// <remarks>Is obsolete use readFile</remarks>
         /// <returns></returns>
         public static string readXMLFile(string path, RoleType role = RoleType.Anonymous, bool encrypted = false)
+        {
+            return readFile(path, role, encrypted);
+        }
+
+        /// <summary>
+        /// Read a file (XML or TXT)
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="role"></param>
+        /// <param name="encrypted"></param>
+        /// <returns></returns>
+        public static string readFile(string path, RoleType role = RoleType.Anonymous, bool encrypted = false)
         {
             var readText = string.Empty;
             try
@@ -82,7 +74,6 @@ namespace TuiGroupReadinFiles.Helper
                 return string.Empty;
             }
         }
-
         /// <summary>
         /// A tiny way to encrypt or decrypt is to do a reverse
         /// </summary>
