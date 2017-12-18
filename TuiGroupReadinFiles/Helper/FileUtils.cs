@@ -80,7 +80,7 @@ namespace TuiGroupReadinFiles.Helper
         /// </summary>
         /// <param name="path">path of the filename</param>
         /// <returns></returns>
-        public static string readJSONFile(string path)
+        public static string readJSONFile(string path, bool encrypted = false)
         {
             var text = string.Empty;
             try
@@ -88,6 +88,10 @@ namespace TuiGroupReadinFiles.Helper
                 var readText = File.ReadAllText(path);
                 dynamic deserializeJson = Newtonsoft.Json.JsonConvert.DeserializeObject(readText);
                 text = deserializeJson[0].hws[2];
+                if (encrypted)
+                {
+                    readText = decryptFile(readText);
+                }
                 return text;
             }
             catch (Exception e)
