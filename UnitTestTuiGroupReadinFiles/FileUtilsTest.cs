@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TuiGroupReadinFiles.Helper;
+using TuiGroupReadinFiles.Enum;
 
 namespace UnitTestTuiGroupReadinFiles
 {
@@ -26,6 +27,21 @@ namespace UnitTestTuiGroupReadinFiles
         {
             var read = FileUtils.readTextFile(@"c:\filesTUI\javiEncrypted.txt",true);
             Assert.IsTrue(read != string.Empty);
+        }
+
+        [TestMethod]
+        public void readAdminXMLFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Admin);
+            Assert.IsTrue(read != string.Empty);
+        }
+
+
+        [TestMethod]
+        public void readAnonymousXMLFile_WhenPruebaText_ReadFileIsNotCorrect()
+        {
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javiAdmin.txt", RoleType.Anonymous);
+            Assert.IsTrue(read == string.Empty);
         }
     }
 }

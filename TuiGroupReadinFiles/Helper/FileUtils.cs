@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using TuiGroupReadinFiles.Enum;
 
 namespace TuiGroupReadinFiles.Helper
 {
@@ -45,7 +46,7 @@ namespace TuiGroupReadinFiles.Helper
         /// </summary>
         /// <param name="path">path of the filename</param>
         /// <returns></returns>
-        public static string readXMLFile(string path)
+        public static string readXMLFile(string path, RoleType role = RoleType.Anonymous)
         {
             var readText = string.Empty;
             try
@@ -53,8 +54,18 @@ namespace TuiGroupReadinFiles.Helper
                 // This text is added only once to the file.
                 if (File.Exists(path))
                 {
-                    // Open the file to read from.
-                    readText = File.ReadAllText(path);
+                    FileInfo fileInfo = new FileInfo(path);
+
+                    //If the file has more than 10 minutes created need to be Admin to access
+                    if (fileInfo.CreationTime.AddMinutes(10) > DateTime.Now || RoleType.Admin.Equals(role))
+                    {
+                        // Open the file to read from.
+                        readText = File.ReadAllText(path);
+                    }
+                    else
+                    {
+                        throw new Exception("The user has no grant to access this file");
+                    }
                 }
                 return readText;
             }
