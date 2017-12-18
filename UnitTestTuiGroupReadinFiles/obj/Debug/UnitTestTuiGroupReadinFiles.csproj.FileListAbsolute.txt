@@ -1,0 +1,9 @@
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\UnitTestTuiGroupReadinFiles.dll
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\UnitTestTuiGroupReadinFiles.pdb
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\TuiGroupReadinFiles.dll
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\TuiGroupReadinFiles.pdb
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\obj\Debug\UnitTestTuiGroupReadinFiles.csprojResolveAssemblyReference.cache
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\obj\Debug\UnitTestTuiGroupReadinFiles.dll
+c:\users\priegoj\documents\visual studio 2015\Projects\TuiGroupReadinFiles\UnitTestTuiGroupReadinFiles\obj\Debug\UnitTestTuiGroupReadinFiles.pdb
