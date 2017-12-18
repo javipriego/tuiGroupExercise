@@ -10,7 +10,15 @@ namespace UnitTestTuiGroupReadinFiles
         [TestMethod]
         public void readTextFile_WhenPruebaText_ReadFileIsCorrect()
         {
-            FileUtils.readTextFile(@"c:\javi.txt");
+            var read = FileUtils.readTextFile(@"c:\filesTUI\javi.txt");
+            Assert.IsTrue(read != string.Empty);
+        }
+
+        [TestMethod]
+        public void readXMLFile_WhenPruebaText_ReadFileIsCorrect()
+        {
+            var read = FileUtils.readXMLFile(@"c:\filesTUI\javi.xml");
+            Assert.IsTrue(read != string.Empty);
         }
     }
 }
