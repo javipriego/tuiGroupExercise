@@ -46,7 +46,7 @@ namespace TuiGroupReadinFiles.Helper
         /// </summary>
         /// <param name="path">path of the filename</param>
         /// <returns></returns>
-        public static string readXMLFile(string path, RoleType role = RoleType.Anonymous)
+        public static string readXMLFile(string path, RoleType role = RoleType.Anonymous, bool encrypted = false)
         {
             var readText = string.Empty;
             try
@@ -61,6 +61,12 @@ namespace TuiGroupReadinFiles.Helper
                     {
                         // Open the file to read from.
                         readText = File.ReadAllText(path);
+
+                        // decrypt the file
+                        if (encrypted)
+                        {
+                            readText = decryptFile(readText);
+                        }
                     }
                     else
                     {
